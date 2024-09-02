@@ -39,4 +39,8 @@ fn main() {
             //.required(true)
         )
     .get_matches();
+
+    //println!("{}", match_result.get_one::<String>("fluffy").unwrap());
+    let pet_args = match_result.subcommand_matches("register-person");
+    println!("does petnames: {}", pet_args.unwrap().get_one::<String>("firstname").unwrap());
 }
